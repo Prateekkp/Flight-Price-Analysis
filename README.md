@@ -1,22 +1,34 @@
-# Flight Price Analysis
+# Flight Price Analysis Project
 
 ## Background and Overview
-This project provides a detailed analysis of flight data collected from various airlines, focusing on pricing trends, airline operations, and traveler preferences. The insights aim to assist both industry professionals and frequent flyers in understanding key factors influencing flight prices and operations.
+With air travel becoming increasingly popular, understanding flight pricing dynamics and customer preferences has become essential. This project aims to analyze flight data to derive actionable insights about fare structures, airline operations, and travel preferences. The dataset, sourced from Goibibo, covers various attributes such as price, airline, stops, and flight duration, enabling a deep dive into the industry patterns.
 
 ## Data Structure Overview
-The dataset consists of the following key features:
-- **Flight Date**: Date of the flight.
-- **Airline**: Airline operating the flight.
-- **Flight Number**: Unique identifier for each flight.
-- **Class**: Service class (Economy, Business).
-- **Departure and Arrival Locations**: Source and destination airports.
-- **Departure and Arrival Times**: Scheduled departure and arrival times.
-- **Duration**: Total duration of the flight.
-- **Price**: Ticket price for the flight.
-- **Stops**: Number of stops (non-stop, 1 stop, 2 stops).
+The dataset includes the following columns:
+- **flight_date**: Date of the flight.
+- **airline**: The airline operating the flight.
+- **flight_num**: Unique flight number identifier.
+- **class**: Flight class (e.g., Economy, Business).
+- **from**: Departure location.
+- **dep_time**: Departure time.
+- **to**: Arrival location.
+- **arr_time**: Arrival time.
+- **duration**: Flight duration.
+- **price**: Flight fare.
+- **stops**: Number of stops (e.g., 0 for non-stop, 1 for one-stop).
+
+Data Cleaning Steps:
+- Converted relevant columns to appropriate data types.
+- Removed leading and trailing whitespaces.
+- Converted `stops` data to numerical values for analysis.
 
 ## Executive Summary
-This exploratory data analysis reveals key insights into pricing dynamics, operational frequency, class preferences, and stopover trends among flights across various airlines. Through this analysis, we’ve identified both competitive advantages and pricing challenges faced by different airlines.
+My analysis revealed key trends in the flight data:
+1. **Price Distribution**: A significant number of flights (over 100,000) are priced below ₹10,000, indicating a market trend towards affordable options.
+2. **Flight Operations by Airline**: Vistara operates the highest number of flights, followed by Air India and Indigo, showcasing a dominant market presence.
+3. **Class Preferences**: Economy class remains the most popular choice, with Business class usage being about half of Economy.
+4. **Price by Airline**: Vistara has the highest average ticket price (~₹30,000), while Indigo and TruJet offer more economical fares, with TruJet being the most budget-friendly.
+5. **Flight Stop Frequency**: Most flights have one stop, indicating that travelers are often willing to accept layovers for reduced fares.
 
 ## Insights Deep Dive
 
@@ -28,7 +40,7 @@ The distribution of flights across airlines shows **Vistara** with the highest n
 ### 2. Class Preferences
 Economic class remains the most preferred choice among passengers, with nearly double the frequency of business class preferences.
 
-![Class Preferences](visuals/Class_Preferences.png)
+![Class Preferences](visuals/Class_Preference.png)
 
 ### 3. Price Distribution Analysis
 The majority of flights are priced below 10,000 INR, reflecting the high competition among airlines to offer affordable travel options.
@@ -46,9 +58,19 @@ Most flights have a single stop, suggesting a preference among airlines for rout
 ![Stops Analysis](visuals/Stops_Analysis.png)
 
 ## Recommendations
-- **For Airlines**: Budget carriers like Indigo can continue to emphasize affordability, while premium carriers like Vistara may focus on enhancing service quality to justify higher price points.
-- **For Passengers**: Consider choosing economy options for significant savings and utilize business class selectively on Vistara for a premium experience.
-- **For Industry Analysts**: Monitor pricing trends closely to identify opportunities for dynamic pricing models and promotional strategies.
+Based on the findings:
+1. **Airline Pricing Strategy**: Airlines with higher average fares could explore promotional discounts or loyalty programs to attract budget-conscious travelers.
+2. **Class Offerings**: Expanding Economy class offerings could better meet demand while maintaining a premium segment for Business class.
+3. **Stopover Optimization**: Airlines with multi-stop routes could consider direct options on popular routes, balancing affordability and traveler preferences.
+4. **Customer Segmentation**: Airlines might benefit from targeting frequent Economy travelers with upgrades or additional services.
 
 ## Conclusion
-This analysis provides a comprehensive look at the factors impacting flight prices, frequency, and class preference. With data-driven insights, airlines can better align services with traveler preferences, potentially gaining a competitive edge in the rapidly evolving airline industry.
+The analysis highlights the competitive pricing strategies in the airline industry, along with customer preferences for affordable and non-stop flights. By optimizing their offerings, airlines can cater to the evolving needs of travelers, maximizing both revenue and customer satisfaction. This project provides a baseline for future research on flight pricing trends and customer behavior in the airline sector.
+
+---
+
+## Repository Contents
+- **data**: The raw and processed flight data files.
+- **notebook**: Jupyter notebooks containing the EDA and insights generation code.
+- **visuals**: Folder for visualizations generated during analysis.
+- **README.md**: Project documentation and overview (this file).
